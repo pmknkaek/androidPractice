@@ -1,2 +1,0 @@
-# androidPractice
-just personal practice
