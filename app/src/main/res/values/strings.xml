@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Practice1</string>
+    <string name="button_go">Hello World!</string>
+    <array name="languages">
+        <item>English</item>
+        <item>German</item>
+    </array>
+    <string name="phrases" translatable="false"></string>
+</resources>
