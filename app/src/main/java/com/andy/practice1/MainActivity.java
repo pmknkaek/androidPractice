@@ -3,6 +3,11 @@ package com.andy.practice1;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +18,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFindWords(View view){
+        TextView words = (TextView) findViewById(R.id.words);
+        Spinner language = (Spinner) findViewById(R.id.spinner);
+        int selection = (int)language.getSelectedItemId();
+        List<String> wordsList = getWords(selection);
+        StringBuilder wordsFormatted = new StringBuilder();
 
+        for (String word:wordsList) {
+            wordsFormatted.append(word).append('\n');
+        }
+        words.setText(wordsFormatted);
+        }
+
+    public List<String> getWords(int id){
+        List<String> words = new ArrayList<String>();
+        if (id == 0){
+            words.add("Hello!");
+            words.add("Hi!");
+        }
+        if (id == 1){
+            words.add("Hallo");
+        }
+        return words;
     }
 }
