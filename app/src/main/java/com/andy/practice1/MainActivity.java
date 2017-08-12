@@ -19,17 +19,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFindWords(View view){
-        TextView words = (TextView) findViewById(R.id.words);
         Spinner language = (Spinner) findViewById(R.id.spinner);
         int selection = (int)language.getSelectedItemId();
         List<String> wordsList = getWords(selection);
-        StringBuilder wordsFormatted = new StringBuilder();
+        String wordsFormatted = "";
         Intent intent = new Intent(this, SecondActivity.class);
 
         for (String word:wordsList) {
-            wordsFormatted.append(word).append('\n');
+            wordsFormatted += word + '\n';
         }
-       // words.setText(wordsFormatted);
+        wordsFormatted = wordsFormatted.substring(0, wordsFormatted.length()-1);
+        intent.putExtra("words", wordsFormatted);
+        //unused TextView
+       /* TextView words = (TextView) findViewById(R.id.words);
+       words.setText(wordsFormatted); */
         startActivity(intent);
         }
 
