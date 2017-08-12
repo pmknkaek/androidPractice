@@ -1,5 +1,6 @@
 package com.andy.practice1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,15 +24,17 @@ public class MainActivity extends AppCompatActivity {
         int selection = (int)language.getSelectedItemId();
         List<String> wordsList = getWords(selection);
         StringBuilder wordsFormatted = new StringBuilder();
+        Intent intent = new Intent(this, SecondActivity.class);
 
         for (String word:wordsList) {
             wordsFormatted.append(word).append('\n');
         }
-        words.setText(wordsFormatted);
+       // words.setText(wordsFormatted);
+        startActivity(intent);
         }
 
     public List<String> getWords(int id){
-        List<String> words = new ArrayList<String>();
+        List<String> words = new ArrayList<>();
         if (id == 0){
             words.add("Hello!");
             words.add("Hi!");

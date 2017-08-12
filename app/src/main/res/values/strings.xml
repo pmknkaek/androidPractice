@@ -6,4 +6,6 @@
         <item>German</item>
     </array>
     <string name="phrases" translatable="false"></string>
+    <string name="main_label">Main Activity</string>
+    <string name="second_label">Second Activity</string>
 </resources>

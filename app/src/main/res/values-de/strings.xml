@@ -6,4 +6,7 @@
         <item>Englisch</item>
         <item>Deutsch</item>
     </array>
+    <string name="main_label" translatable="false">Hauptactivity</string>
+    <string name="second_label">Zweiteactivity</string>
+    <string name="phrases" translatable="false"></string>
 </resources>
